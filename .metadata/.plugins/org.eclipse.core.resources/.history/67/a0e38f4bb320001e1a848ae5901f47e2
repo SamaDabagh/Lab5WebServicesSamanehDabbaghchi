@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Form</title>
+</head>
+<body>
+
+<form method="get" action= "http://localhost:8080/WebHelloFormRESTProject/rest/WebHelloForm/HelloParameter" >
+    <label for="productId">Product ID:</label>
+    <input type="text" id="productId" name="productId" required><br><br>
+    
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" required><br><br>
+    
+    <label for="productGroup">Product Group:</label>
+    <input type="text" id="productGroup" name="productGroup" required><br><br>
+    
+    <label for="productPrice">Product Price:</label>
+    <input type="text" id="productPrice" name="productPrice" required><br><br>
+    
+    <label for="productReducedPrice">Product Reduced Price:</label>
+    <input type="text" id="productReducedPrice" name="productReducedPrice" required><br><br>
+    
+    <label for="productMinOrder">Product Minimum Order:</label>
+    <input type="text" id="productMinOrder" name="productMinOrder" required><br><br>
+    
+    <label for="productCanBeSold">Product Can Be Sold:</label>
+    <input type="checkbox" id="productCanBeSold" name="productCanBeSold"><br><br>
+    
+    <label for="productPricePreFix">Product Price Prefix:</label>
+    <input type="text" id="productPricePreFix" name="productPricePreFix" required><br><br>
+    
+    <label for="productImageUrl">Product Image URL:</label>
+    <input type="text" id="productImageUrl" name="productImageUrl" required><br><br>
+    
+    <input type="submit" name="submit" value="Submit">
+    <input type="reset" value="Cancle">
+    
+</form>
+</body>
+</html>

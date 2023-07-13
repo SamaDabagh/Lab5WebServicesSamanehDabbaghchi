@@ -1,0 +1,4 @@
+#GlassFish 3
+#Wed Jul 12 21:14:57 EDT 2023
+org.eclipse.jst.jee.server\:WebHelloFormRESTProject=/Users/macbookpro2016/Desktop/Vanier College/Block4/WebServises/glassfish7/glassfish/domains/domain1/eclipseApps/WebHelloFormRESTProject
+org.eclipse.jst.jee.server\:WebMyHelloServiceProject=/Users/macbookpro2016/Desktop/Vanier College/Block4/WebServises/glassfish7/glassfish/domains/domain1/eclipseApps/WebMyHelloServiceProject

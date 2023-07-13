@@ -1,0 +1,30 @@
+package webHelloFormREST;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("WebHelloForm")
+
+public class HelloFormResource {
+
+	@GET 
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayHelloAsText()
+	{
+		return "Hello Every One!";
+	}
+	
+	@GET 
+	@Produces(MediaType.TEXT_HTML )
+	public String displayHelloAsParameters(
+		@QueryParam("Name") String name , 
+		@QueryParam("Year") int year)
+	{
+		String str = displayHelloAsText();
+		return "<html><body> <title>Hello Using REST</title>"
+				+ "<h1>"+str+"</h1></body></html> "; 
+	}
+}

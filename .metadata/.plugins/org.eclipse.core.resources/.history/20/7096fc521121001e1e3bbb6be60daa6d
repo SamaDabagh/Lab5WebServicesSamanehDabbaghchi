@@ -1,0 +1,99 @@
+package webHelloFormREST;
+
+import jakarta.ws.rs.FormParam;
+import java.util.*;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("WebHelloForm")
+
+public class HelloFormResource {
+	
+	
+	List<String> nameList = new ArrayList<>();
+	public void addName()
+	{
+		nameList.add("Sarah");
+		nameList.add("Anais");
+		nameList.add("Bob");
+		
+	}
+
+	@GET 
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayHelloAsText()
+	{
+		return "Hello Every One!";
+	}
+	
+	@GET 
+	@Path("HelloParameter")
+	@Produces(MediaType.TEXT_HTML )
+	public String displayHelloAsParameters(
+		@QueryParam("Name") String name , 
+		@QueryParam("Year") int year)
+	{
+		String str = displayHelloAsText();
+		return "<html><body> <title>Hello Using REST</title>"
+				+ "<h3>"+str+" From "+name
+				+ ",Year is "+year
+				+"</h3></body></html> "; 
+	}
+	
+	@POST 
+	@Path("HelloBody")
+	@Produces(MediaType.TEXT_HTML )
+	public String displayHelloAsBody(
+		@FormParam("Name") String name , 
+		@FormParam("Year") int year)
+	{
+		String str = displayHelloAsText();
+		return "<html><body> <title>Hello Using REST</title>"
+				+ "<h3>"+str+" From "+name
+				+ ",Year is "+year
+				+"</h3></body></html> "; 
+	}
+	
+	@GET
+	@Path("addName")
+	@Produces(MediaType.TEXT_HTML )
+	public String addNameParameters(
+			
+			@QueryParam("Name") String name , 
+			@QueryParam("Year") int year)
+		{
+		
+		addName();
+		nameList.add(name);
+		
+			String str = displayHelloAsText();
+			return "<html><body> <title>Hello Using REST</title>"
+					+ "<h3>"+str+" From "+name
+					+ ",Year is "+year+"</h3>"
+					+ "\nNew List is: "+ nameList.toString() +"</body></html> "; 
+		}
+	
+	@PUT
+	@Path("addName")
+	@Produces(MediaType.TEXT_HTML )
+	public String updateNameParameters(
+			
+			@QueryParam("Name") String name , 
+			@QueryParam("Year") int year)
+		{
+		
+		addName();
+		nameList.add(name);
+		
+			String str = displayHelloAsText();
+			return "<html><body> <title>Hello Using REST</title>"
+					+ "<h3>"+str+" From "+name
+					+ ",Year is "+year+"</h3>"
+					+ "\nNew List is: "+ nameList.toString() +"</body></html> "; 
+		}
+}
